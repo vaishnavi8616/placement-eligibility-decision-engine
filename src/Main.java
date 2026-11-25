@@ -1,6 +1,24 @@
+import java.util.*;
 public class Main {
    public static void main(String[] args) {
-      System.out.println("Placement Eligibility Decision Engine");
+      Scanner scanner = new Scanner(System.in);
+
+      String name = scanner.next();
+      double percentage = scanner.nextDouble();
+      int backlogs = scanner.nextInt();
+      int graduationYear = scanner.nextInt();
       
+      // creating objects for candidate and job
+      Candidate candidate = new Candidate(name, percentage, backlogs,graduationYear);
+
+      Job job = new Job("Infosys", "Java Developer", 65.0, 0, 2026);
+
+       System.out.println("Candidate: " + candidate.getName());
+       System.out.println("Company: " + job.getCompany());
+       System.out.println("Role: " + job.getRole());
+       System.out.println("Minimum Percentage: " + job.getMinimumPercentage());
+       System.out.println("Maximum Backlogs: " + job.getMaximumBacklogs());
+       System.out.println("Required Graduation Year: " + job.getRequiredGraduationYear());
+
    }
 }
